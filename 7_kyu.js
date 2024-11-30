@@ -39,3 +39,32 @@ function sumOfMinimums(arr) {
     .reduce((acc, current) => acc + current, 0); // Math.min to get minimum number in list // usse reduce to find sum of minimums
 }
 
+// Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings,
+// ordered from shortest to longest. For example, if this array were passed as an argument:
+// ["Telescopes", "Glasses", "Eyes", "Monocles"] Your function would return the following array:
+// ["Eyes", "Glasses", "Monocles", "Telescopes"]
+
+function sortByLength(array) {
+  return array.sort((a, b) => a.length - b.length);
+}
+
+// Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid.
+// The function should return true if the string is valid, and false if it's invalid.
+
+function validParentheses(s) {
+  let pair = 0; // pair of matching parentheses
+
+  for (let char of s) {
+    if (char === "(") {
+      pair++; // increment pair
+    } else if (char === ")") {
+      pair--; // decrement pair
+    }
+
+    // eturn false if closing parentheses has no matching opening one
+    if (pair < 0) {
+      return false;
+    }
+  }
+  return pair === 0; // pair should be back to 0 if there is a match
+}

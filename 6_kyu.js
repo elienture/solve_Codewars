@@ -81,3 +81,12 @@ function getMinAvgMax(toDiscard, data) {
 
   return results;
 }
+
+// Complete the solution so that the function will break up camel casing, using a space between words.
+// example: "camelCasing"  =>  "camel Casing"
+
+function solution(string) {
+  return(string.replace(/([A-Z])/g, ' $1')); // adding a space between each uppercase letter
+}
+
+
