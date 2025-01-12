@@ -89,4 +89,33 @@ function solution(string) {
   return(string.replace(/([A-Z])/g, ' $1')); // adding a space between each uppercase letter
 }
 
+// Define a function that takes an integer argument and returns a logical value true or false
+// depending on if the integer is a prime.
+
+// the solution is not optimized enough
+function isPrime(num) {
+  if (num <= 1) {
+    return false
+  }
+  
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false
+    }
+  }
+  
+  return true
+}
+
+// solution 2
+function isPrime(num) {
+  if (num <= 1) return false;
+
+  for (let i = 2; i <= Math.sqrt(num); i++) { // if num has a divisor larger than its square root, the divisor will be smaller than the square root
+      if (num % i === 0) {
+          return false;
+      }
+  }
+  return true;
+}
 

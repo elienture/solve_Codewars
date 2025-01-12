@@ -68,3 +68,42 @@ function validParentheses(s) {
   }
   return pair === 0; // pair should be back to 0 if there is a match
 }
+
+// The two oldest ages function/method needs to be completed.
+// It should take an array of numbers as its argument and return the two highest numbers within the array.
+// The returned value should be an array in the format [second oldest age,  oldest age].
+
+// solution 1
+function twoOldestAges(ages) {
+  ages.sort((a, b) => a - b);
+  return [ages[ages.length - 2], ages[ages.length - 1]];
+}
+
+// solution 2
+function twoOldestAges(ages) {
+  ages.sort((a, b) => b - a);
+  return [ages[1], ages[0]];
+}
+
+// Given two arrays of strings, return the number of times each string of the second array appears in the first array.
+// Example
+// array1 = ['abc', 'abc', 'xyz', 'cde', 'uvw']
+// array2 = ['abc', 'cde', 'uap']
+
+function solve(a, b) {
+  return b.map((str) => a.filter((el) => el === str).length);
+}
+
+// Given a two-dimensional array of integers, return the flattened version of the array with all the integers
+// in the sorted (ascending) order.
+
+function flattenAndSort(array) {
+  let result = [];
+
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array[i].length; j++) {
+      result.push(array[i][j]);
+    }
+  }
+  return result.sort((a, b) => a - b);
+}
